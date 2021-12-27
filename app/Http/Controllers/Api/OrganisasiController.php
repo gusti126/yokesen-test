@@ -51,6 +51,14 @@ class OrganisasiController extends Controller
             ], 400);
         }
 
+        $organisasi = Organisasi::find($request->organisasi_id);
+        if (!$organisasi) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'organisasi id not found'
+            ], 404);
+        }
+
         $cekKuota = MyOrganisasi::where('organisasi_id', $request->organisasi_id)->count();
         if ($cekKuota >= 5) {
             return response()->json([
