@@ -1,6 +1,50 @@
 ## Link Dokumentasi API
 
-<a href="https://documenter.getpostman.com/view/14430263/UVREkkAL">Link Dokumentasi API </a>
+<a href="https://documenter.getpostman.com/view/14430263/UVREkkAL">Link Dokumentasi API POSTMAN</a>
+
+## Build Setup
+
+download
+
+```
+git clone https://github.com/gusti126/yokesen-test.git
+```
+
+copy .env
+
+```
+cd yokesen-test
+cp .env.example .env
+```
+
+install dependency
+
+```
+composer install
+```
+
+config env
+
+```
+php artisan key:generate
+```
+
+```
+php artisan jwt:secret
+```
+
+create database and run
+
+```
+php artisan migrate --seed
+```
+
+.
+.
+.
+.
+.
+.
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
