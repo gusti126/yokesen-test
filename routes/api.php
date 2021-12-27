@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\OrganisasiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
+
+Route::get('list-organisasi', [OrganisasiController::class, 'index']);
+Route::get('my-organisasi', [OrganisasiController::class, 'myOrganisasi'])->middleware('auth:api');
+Route::post('daftar-organisasi', [OrganisasiController::class, 'daftar'])->middleware('auth:api');
+Route::post('mundur-organisasi', [OrganisasiController::class, 'undur'])->middleware('auth:api');
