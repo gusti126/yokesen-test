@@ -29,7 +29,7 @@ class OrganisasiController extends Controller
         $userId = Auth::user()->id;
         $myOrganisasi = DB::table('my_organisasis')->where('user_id', $userId)
             ->join('organisasis', 'my_organisasis.organisasi_id', '=', 'organisasis.id')
-            ->select('nama', 'my_organisasis.created_at as mendaftar_pada')->get();
+            ->select('nama', 'my_organisasis.created_at')->get();
 
         return response()->json([
             'status' => 'success',
